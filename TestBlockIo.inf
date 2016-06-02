@@ -1,0 +1,42 @@
+## @file
+# Test Block Io driver
+# 
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = TestBlockIo
+  FILE_GUID                      = F579E147-A125-11d4-BCFC-0080C73C8781
+  MODULE_TYPE                    = UEFI_DRIVER
+  VERSION_STRING                 = 1.0
+
+  ENTRY_POINT                    = InitializeTestBlockIo
+
+
+[Sources]
+  DriverDiagnostics.c
+  DriverConfiguration.c
+  ComponentName.c
+  TestBlockIo.c
+  TestBlockIo.h
+
+
+[Packages]
+  MdePkg/MdePkg.dec
+  
+[LibraryClasses]
+  MemoryAllocationLib
+  UefiBootServicesTableLib
+  BaseMemoryLib
+  UefiLib
+  UefiDriverEntryPoint
+  BaseLib
+  DebugLib
+  
+
+[Guids]
+
+
+[Protocols]
+  gEfiBlockIoProtocolGuid                       # PROTOCOL BY_START
+  
